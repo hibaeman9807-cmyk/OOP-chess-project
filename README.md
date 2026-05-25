@@ -128,13 +128,12 @@ Where:
 - ✓ Designed and implemented core chess game logic
 - ✓ Developed comprehensive move validation system for all pieces
 - ✓ Implemented check and checkmate detection algorithms
-- ✓ Built robust save and load system using C++ file handling
 - ✓ Managed game flow and turn-based game management
 - ✓ Debugging, testing, and gameplay stability improvements
 
 ### Team Members
 - **Hiba Eman** - Core game logic, rule enforcement, backend
-- **Muhammad Taha** - SFML GUI implementation, team support
+- **Muhammad Taha** - SFML GUI implementation, team support, Built robust save and load system
 
 ---
 
