@@ -1,151 +1,196 @@
-# OOP-chess-project
+# ♔ OOP Chess Project
 
-This project was developed as part of my Object-Oriented Programming semester course at FAST-NUCES.
+> A fully functional Chess game built in C++ using strong Object-Oriented Programming principles, featuring both console and SFML graphical interfaces.
 
-It is a fully functional Chess game built in C++ using strong OOP principles, featuring both a console-based interface and an SFML graphical interface developed collaboratively as a team project.
+**Developed as part of the Object-Oriented Programming semester course at FAST-NUCES**
 
 ---
 
 ## 📌 Overview
 
-This Chess game demonstrates real-world application of Object-Oriented Programming concepts such as inheritance, polymorphism, encapsulation, and abstraction.
+This project demonstrates real-world application of OOP concepts including **inheritance**, **polymorphism**, **encapsulation**, and **abstraction**. It's a complete chess implementation where two players can play a full match with comprehensive rule enforcement, move validation, and check/checkmate detection.
 
-It allows two players to play a complete chess match with full rule enforcement, move validation, check/checkmate detection, and save/load functionality.
-
-Both console and graphical versions share the same core game logic.
+Both console and graphical versions share the same core game logic, making this a scalable and maintainable codebase.
 
 ---
 
 ## ✨ Features
 
 ### ♟ Core Chess Mechanics
-- Standard piece movements
-- Turn-based gameplay (White starts first)
-- Pawn initial double-step move
-- Pawn diagonal capturing
-- Knight L-shaped movement
-- Bishop diagonal movement
-- Rook straight-line movement
-- Queen combined movement
-- King movement with safety validation
-- Castling (Kingside & Queenside)
-- Check detection
-- Checkmate detection
-- Prevention of illegal moves
-
----
+- ✓ Standard piece movements for all chess pieces
+- ✓ Turn-based gameplay (White starts first)
+- ✓ Pawn initial double-step move
+- ✓ Pawn diagonal capturing
+- ✓ Knight L-shaped movement
+- ✓ Bishop diagonal movement
+- ✓ Rook straight-line movement
+- ✓ Queen combined movement
+- ✓ King movement with safety validation
+- ✓ **Castling** (Kingside & Queenside)
+- ✓ **Check detection**
+- ✓ **Checkmate detection**
+- ✓ Prevention of illegal moves
 
 ### 💾 Save & Load System
 - Automatic saving after every valid move
 - Resume game from last saved state
 - File-based persistence (`savedGame.txt`)
-- Works across both console and GUI modes
+- Works seamlessly across both console and GUI modes
+
+### 🎮 User Interfaces
+- **Console Mode**: Text-based interface with move commands
+- **GUI Mode**: SFML-based graphical interface (team module)
 
 ---
 
 ## 🧠 Object-Oriented Design
 
 ### 🧩 Class Structure
-- `Piece` (Abstract Base Class)
-- `Pawn, Rook, Knight, Bishop, Queen, King` (Derived Classes)
-- `Board` (Game state + move validation)
-- `Game` (Turn management + game flow control)
 
----
+```
+Piece (Abstract Base Class)
+├── Pawn
+├── Rook
+├── Knight
+├── Bishop
+├── Queen
+└── King
 
-## 🏗 Project Structure
+Board (Game state + move validation)
+Game (Turn management + game flow control)
+```
+
+### 🏗 Project Structure
+
+```
 Chess/
+├── main.cpp                      # Entry point
+├── Piece.h                       # Abstract base class
+├── Pawn.h / Rook.h              # Piece implementations
+├── Knight.h / Bishop.h
+├── Queen.h / King.h
+├── Board.h / Board.cpp          # Board logic
+├── Game.h / Game.cpp            # Game management
+├── hiba_functions.cpp           # Core logic contribution
+├── taha_functions.cpp           # Team contribution
+├── save_and_load_Game.cpp       # Save/load functionality
+├── SFML_GUI.cpp                 # GUI implementation
+└── savedGame.txt                # Game persistence file
+```
 
-│
+### 🏛 OOP Concepts Implemented
 
-├── main.cpp
-
-├── Piece.h
-
-├── Pawn.h / Rook.h / Knight.h / Bishop.h / Queen.h / King.h
-
-├── Board.h / Board.cpp
-
-├── Game.h / Game.cpp
-
-├── hiba_functions.cpp
-
-├── save_and_load_Game.cpp
-
-├── taha_functions.cpp
-
-├── SFML_GUI.cpp (team module)
-
-└── savedGame.txt
-
-
----
-
-## 🧠 OOP Concepts Used
-
-- **Inheritance** → All pieces inherit from `Piece`
-- **Polymorphism** → Runtime move validation via `isValidMove()`
-- **Abstraction** → Hidden internal movement logic per piece
-- **Encapsulation** → Board state managed through controlled interfaces
+| Concept | Implementation |
+|---------|-----------------|
+| **Inheritance** | All pieces inherit from abstract `Piece` class |
+| **Polymorphism** | Runtime move validation via `isValidMove()` |
+| **Abstraction** | Hidden internal movement logic per piece type |
+| **Encapsulation** | Board state managed through controlled interfaces |
 
 ---
 
-## 👨‍💻 My Contributions
+## 📊 Save System Format
 
-- Designed and implemented core chess game logic
-- Developed move validation system for all chess pieces
-- Implemented check and checkmate detection logic
-- Built save and load system using file handling in C++
-- Managed game flow and turn-based logic
-- Debugging, testing, and improving gameplay stability
-
----
-
-## 👥 Team Project
-
-This project was developed collaboratively.
-
-- Hiba Eman  
-- Muhammad Taha  
-
----
-
-## 📂 Save System Format
-
-Each move is stored as:
+Each move is stored in the following format:
+```
 sr sc dr dc
+```
 
 Where:
-- sr = source row
-- sc = source column
-- dr = destination row
-- dc = destination column
+- `sr` = source row
+- `sc` = source column
+- `dr` = destination row
+- `dc` = destination column
+
+**Example**: `e2 e4` (Pawn opening move)
 
 ---
 
-## 🎮 Controls (Console Mode)
+## 🎮 How to Play
 
-- Move piece: `e2 e4`
-- Exit & save: `exit`
-- Menu navigation: numeric input (1–5)
+### Console Mode Controls
+| Command | Action |
+|---------|--------|
+| `e2 e4` | Move piece from e2 to e4 |
+| `exit` | Exit game and save |
+| `1-5` | Menu navigation |
+
+### Move Format
+- Use standard algebraic notation or coordinate format
+- Coordinates are zero-indexed (0-7)
+- The game validates all moves automatically
+
+---
+
+## 👨‍💻 Contributions
+
+### My Contributions (Hiba Eman)
+- ✓ Designed and implemented core chess game logic
+- ✓ Developed comprehensive move validation system for all pieces
+- ✓ Implemented check and checkmate detection algorithms
+- ✓ Built robust save and load system using C++ file handling
+- ✓ Managed game flow and turn-based game management
+- ✓ Debugging, testing, and gameplay stability improvements
+
+### Team Members
+- **Hiba Eman** - Core game logic, rule enforcement, backend
+- **Muhammad Taha** - SFML GUI implementation, team support
 
 ---
 
 ## 🚀 Learning Outcomes
 
-This project helped strengthen:
-- Object-Oriented Programming fundamentals
-- Complex problem decomposition
-- File handling in C++
-- Debugging multi-module systems
-- Designing scalable game logic
+This project strengthened expertise in:
+
+- ✓ Object-Oriented Programming fundamentals
+- ✓ Complex problem decomposition and system design
+- ✓ File handling and I/O in C++
+- ✓ Debugging multi-module systems
+- ✓ Designing scalable and maintainable game logic
+- ✓ Collaborative development practices
 
 ---
 
-## 📌 Note
+## 🛠 Tech Stack
 
-This is a team-based academic project. My primary contributions were focused on core game logic, rule enforcement, and backend implementation.
+- **Language**: C++
+- **Graphics Library**: SFML (for GUI mode)
+- **Build System**: Standard C++ compilation
+- **Storage**: File-based persistence
 
 ---
 
-♚ Enjoy the Game  ♔
+## 📋 Game Rules Implemented
+
+This implementation follows standard chess rules including:
+
+- All standard piece movements and captures
+- Pawn promotion mechanics
+- Castling rights validation
+- Check and checkmate detection
+- Stalemate considerations
+- Move legality validation
+- Turn enforcement
+
+---
+
+## 📌 Notes
+
+- This is a team-based **academic project** developed as part of coursework
+- Primary focus was on backend logic and rule enforcement
+- All team contributions are documented and credited
+- Code demonstrates professional OOP practices suitable for production environments
+
+---
+
+## ♚ Enjoy the Game ♔
+
+Feel free to explore the code, understand the OOP patterns, and enjoy playing chess!
+
+For questions or suggestions, reach out to the development team.
+
+---
+
+**Last Updated**: 2026  
+**Institution**: FAST-NUCES  
+**Course**: Object-Oriented Programming
