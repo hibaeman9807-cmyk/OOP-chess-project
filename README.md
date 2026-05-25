@@ -55,16 +55,27 @@ Both console and graphical versions share the same core game logic.
 
 ## 🏗 Project Structure
 Chess/
+
 │
+
 ├── main.cpp
+
 ├── Piece.h
+
 ├── Pawn.h / Rook.h / Knight.h / Bishop.h / Queen.h / King.h
+
 ├── Board.h / Board.cpp
+
 ├── Game.h / Game.cpp
+
 ├── hiba_functions.cpp
+
 ├── save_and_load_Game.cpp
+
 ├── taha_functions.cpp
+
 ├── SFML_GUI.cpp (team module)
+
 └── savedGame.txt
 
 
